@@ -14,5 +14,5 @@ Prompt: "Run the split on this repo." Grader: LLM judge checks the report for th
 
 ## Expert-labeled seeds (human review of applied runs)
 
-- conversion of a nested guide into a path-scoped rule file → expect a post-apply load check on every created or re-globbed scoped file (clean agent reads one in-scope file and quotes a marker phrase from its entire context)
+- conversion of a nested guide into a path-scoped rule file → expect a post-apply load check per created or changed glob (clean agent reads one file matched by that glob and quotes a marker phrase from its entire context)
 - load-check prompt asking about "the file" instead of the entire context → expect a false NONE, the phrasing is part of the check

@@ -66,7 +66,7 @@ Flag orphans while there: a nested CLAUDE.md whose directory no longer holds fir
 
 Present the full report before editing anything. Per rule: the verdict (demote, promote, keep, flag), the destination, and the evidence (governed paths, load-path result). Only edit after approval, on a branch with a PR for checked-in files. Close with est. resident tokens per session before and after, listing separately what every session pays and what only in-scope sessions pay.
 
-After applying, verify that each scoped file the edits created or re-globbed actually loads. Give one fresh low-effort agent a Read of one in-scope file and ask it to quote every context line containing a marker phrase unique to the scoped file. Tell it explicitly to search its entire context window and not just the file it read: asked about "the file", an agent answers about the file alone and returns a false NONE. The phrase comes back: the trigger fires. NONE comes back: the placement is broken, and the move reverts until the globs are fixed.
+After applying, verify that each scoped file the edits created or re-globbed actually loads: one probe per created or changed glob, each a fresh low-effort agent that reads one file matched by that glob and quotes every context line containing a marker phrase unique to the scoped file. One file cannot vouch for the globs that did not select it: a valid glob loads the rule and hides a malformed neighbor. Tell each agent explicitly to search its entire context window and not just the file it read: asked about "the file", an agent answers about the file alone and returns a false NONE. The phrase comes back: the glob fires. NONE comes back: the placement is broken, and the move reverts until the globs are fixed.
 
 ## Moves are verbatim
 
