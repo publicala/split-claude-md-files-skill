@@ -11,3 +11,8 @@ Fixture (scaffold_script): tiny repo whose root CLAUDE.md plants one of each:
 - path-scoped rule whose globs match nothing → expect FLAG as orphan, deletion deferred to audit
 
 Prompt: "Run the split on this repo." Grader: LLM judge checks the report for the seven verdicts. Run: `claude plugin eval split-claude-md-files --ablation with-without --runs 1`
+
+## Expert-labeled seeds (human review of applied runs)
+
+- conversion of a nested guide into a path-scoped rule file → expect a post-apply load check per created or changed glob (clean agent reads one file matched by that glob and quotes a marker phrase from its entire context)
+- load-check prompt asking about "the file" instead of the entire context → expect a false NONE, the phrasing is part of the check
