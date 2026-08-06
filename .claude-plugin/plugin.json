@@ -1,7 +1,7 @@
 {
   "name": "split-claude-md-files",
   "description": "Moves CLAUDE.md rules to the load scope of the sessions they govern.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "Publica.la"
   },
